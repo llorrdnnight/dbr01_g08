@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS dbr01_g08.progamma(
+id_progamma		Integer						NOT NULL,
+id_begeleider 	Integer						NOT NULL,
+naam			VARCHAR(35)					NOT NULL,
+duur			VARCHAR(35)					NOT NULL,
+CONSTRAINT progamma_PK PRIMARY KEY (id_progamma),
+CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider)
+)
