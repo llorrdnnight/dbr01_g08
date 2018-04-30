@@ -17,5 +17,15 @@ id_begeleider 		Integer						NOT NULL,
 naam			VARCHAR(35)					NOT NULL,
 duur			VARCHAR(35)					NOT NULL,
 CONSTRAINT progamma_PK PRIMARY KEY (id_progamma),
-CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider)
+CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) Reference begeleider (id_begeleider)
 )
+
+Create table if not exists dbr01_08.activiteit(
+	id_activiteit			Integer	NOT NULL,
+	id_werkvorm				Integer	Not Null,
+	id_programma_activiteit	Integer	Not Null,
+	id_missendmateriaal		Integer	Not	Null,
+	CONSTRAINT activiteit_PK PRIMARY KEY(id_activiteit),
+	CONSTRAINT FOREIGN KEY () Reference 
+) //nog niet af 
+

@@ -1,0 +1,6 @@
+DROP TABLE dbr01_g08.begeleider
+
+DROP TABLE dbr01_g08.programma
+
+DROP TABLE dbr01_g08.activiteit
+
