@@ -45,3 +45,13 @@ Create table if not exists dbr01_g08.vastebegeleider(
 	Constraint begeleider_FK FOREIGN KEY (id_begeleider) REFERENCES dbr01_g08.begeleider(id_begeleider),
 	CONSTRAINT vastebegeleider_PK PRIMARY KEY (id_vastebegeleider)
 );
+
+
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.werkvorm(
+groote_groep	Integer						NOT NULL,
+tijdsduur	Integer						NOT NULL,
+CONSTRAINT werkvorm_PK PRIMARY KEY (id_werkvorm),
+CONSTRAINT activiteit_fk FOREIGN KEY (id_activeit) References dbr01_g08.activiteit (id_activiteit),
+CONSTRAINT aanpassing_fk FOREIGN KEY (id_aanpassing) References dbr01_g08.aanpassing (id_aanpassing)
+);
