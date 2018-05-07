@@ -69,3 +69,9 @@ Create table if not exists dbr01_g08.vrijwilligebegeleider(
 	Constraint begeleider_FK FOREIGN KEY (id_begeleider) REFERENCES dbr01_g08.begeleider(id_begeleider),
 	CONSTRAINT vrijwilligebegeleider_PK PRIMARY KEY (id_vrijwilligebegeleider)
 );
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.klant(
+id_klant	Integer		NOT NULL,
+CONSTRAINT klant_PK PRIMARY KEY (id_klant),
+CONSTRAINT werkvorm_fk FOREIGN KEY (id_werkvorm) References dbr01_g08.werkvorm (id_werkvorm)
+);
