@@ -62,3 +62,9 @@ activiteit_id	Integer						NOT NULL,
 aanpassing_id 	Integer						NOT NULL,
 CONSTRAINT werkvorm_PK PRIMARY KEY (id_werkvorm)
 );
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.klant(
+id_klant	Integer		NOT NULL,
+CONSTRAINT klant_PK PRIMARY KEY (id_klant),
+CONSTRAINT werkvorm_fk FOREIGN KEY (id_werkvorm) References dbr01_g08.werkvorm (id_werkvorm)
+);
