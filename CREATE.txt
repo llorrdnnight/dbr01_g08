@@ -62,3 +62,10 @@ activiteit_id	Integer						NOT NULL,
 aanpassing_id 	Integer						NOT NULL,
 CONSTRAINT werkvorm_PK PRIMARY KEY (id_werkvorm)
 );
+
+Create table if not exists dbr01_g08.vrijwilligebegeleider(
+	id_vrijwilligebegeleider	integer not null,
+	id_begeleider		integer not null, 
+	Constraint begeleider_FK FOREIGN KEY (id_begeleider) REFERENCES dbr01_g08.begeleider(id_begeleider),
+	CONSTRAINT vrijwilligebegeleider_PK PRIMARY KEY (id_vrijwilligebegeleider)
+);
