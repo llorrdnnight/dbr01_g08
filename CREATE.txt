@@ -1,13 +1,15 @@
+CREATE TYPE enum_rijbewijs as ENUM ('a', 'b', 'c', 'd', 'g', 'am');
+CREATE TYPE enum_ehbo as ENUM('ja', 'nee');
 CREATE TABLE IF NOT EXISTS dbr01_g08.begeleider(
 id_begeleider	Integer						NOT NULL,
 leeftijd		Integer						NOT NULL,
 telefoonnummer	float(53)					NOT NULL,
 voornaam		varchar(35)					NOT NULL,
 achternaam		varchar(35)					NOT NULL,
-rijbewijs		ENUM(a, b, c, d, g, am)		NOT NULL,
-ehbo			ENUM(ja, nee)				NOT NULL,
+rijbewijs		enum_rijbewijs				NOT NULL,
+ehbo			enum_ehbo					NOT NULL,
 geboortedatum	DATE						NOT NULL,
-vooropleiding	TINYTEXT					NOT NULL,
+vooropleiding	TEXT						NOT NULL,
 CONSTRAINT begeleider_PK PRIMARY KEY (id_begeleider)
 )
 
