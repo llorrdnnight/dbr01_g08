@@ -40,12 +40,19 @@ Create table if not exists dbr01_g08.programma_activiteit(
 );
 
 
+CREATE TABLE IF NOT EXISTS dbr01_g08.aanpassing(
+id_aanpassing	Integer				NOT NULL,
+
+CONSTRAINT aanpassing_PK PRIMARY KEY (id_aanpassing),
+CONSTRAINT vastebegeleider_PK FOREIGN KEY (id_vastebegeleider) REFERENCES dbr01_g08.vastebegeleider(id_vastebegeleider),
+CONSTRAINT werkvorm_PK FOREIGN KEY (id_werkvorm) REFERENCES dbr01_g08.werkvorm(id_werkvorm)
+);
 
 CREATE TABLE IF NOT EXISTS dbr01_g08.werkvorm(
 id_werkvorm	Integer						NOT NULL,
 groote_groep	Integer						NOT NULL,
 tijdsduur	Integer						NOT NULL,
-CONSTRAINT werkvorm_PK PRIMARY KEY (id_werkvorm),
-CONSTRAINT activiteit_fk FOREIGN KEY (id_activeit) References dbr01_g08.activiteit (id_activiteit),
-CONSTRAINT aanpassing_fk FOREIGN KEY (id_aanpassing) References dbr01_g08.aanpassing (id_aanpassing)
+activiteit_id	Integer						NOT NULL,
+aanpassing_id 	Integer						NOT NULL,
+CONSTRAINT werkvorm_PK PRIMARY KEY (id_werkvorm)
 );
