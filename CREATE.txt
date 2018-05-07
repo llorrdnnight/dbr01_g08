@@ -38,3 +38,10 @@ Create table if not exists dbr01_g08.programma_activiteit(
 	CONSTRAINT activiteit_fk FOREIGN KEY (id_activiteit) REFERENCES dbr01_g08.activiteit(id_activiteit),
 	CONSTRAINT p_a_PK PRIMARY KEY (id_programma, id_activiteit)
 );
+
+Create table if not exists dbr01_g08.vastebegeleider(
+	id_vastebegeleider	integer not null,
+	id_begeleider		integer not null, 
+	Constraint begeleider_FK FOREIGN KEY (id_begeleider) REFERENCES dbr01_g08.begeleider(id_begeleider),
+	CONSTRAINT vastebegeleider_PK PRIMARY KEY (id_vastebegeleider)
+);
