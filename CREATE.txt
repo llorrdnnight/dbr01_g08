@@ -38,10 +38,19 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.werkvorm(
 CREATE TABLE IF NOT EXISTS dbr01_g08.activiteit(
 	id_activiteit		Integer					NOT NULL,
 	id_werkvorm		Integer					NOT NULL,
-	id_programma_activiteit	Integer					NOT NULL,
-	id_missendmateriaal	Integer					NOT NULL,
 	CONSTRAINT activiteit_PK PRIMARY KEY(id_activiteit)
 );
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.missend_materiaal(
+	id_missend_materiaal	Integer					NOT NULL,
+	id_activiteit		Integer					NOT NULL,
+	object			varchar(35)				NOT NULL,
+	aantal			Integer					NOT NULL,
+	prijsineuro		Integer					NOT NULL,
+	CONSTRAINT missend_materiaal_PK PRIMARY KEY (id_missend_materiaal),
+	CONSTRAINT activiteit_fk FOREIGN KET (id_activiteit) REFERENCES dbr01_g08.activiteit(id_activiteit)
+);
+
 
 CREATE TABLE IF NOT EXISTS dbr01_g08.programma_activiteit(
 	id_programma		Integer 				NOT NULL,
@@ -52,13 +61,6 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.programma_activiteit(
 	CONSTRAINT p_a_PK PRIMARY KEY (id_programma, id_activiteit)
 );
 
-CREATE TABLE IF NOT EXISTS dbr01_g08.missend_materiaal(
-	id_missend_materiaal	Integer					NOT NULL,
-	object			varchar(35)				NOT NULL,
-	aantal			Integer					NOT NULL,
-	prijsineuro		Integer					NOT NULL,
-	CONSTRAINT missend_materiaal_PK PRIMARY KEY (id_missend_materiaal)
-);
 
 CREATE TABLE IF NOT EXISTS dbr01_g08.activiteit_missend_materiaal(
 	id_activiteit		Integer					NOT NULL,
