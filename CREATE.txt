@@ -75,3 +75,16 @@ id_klant	Integer		NOT NULL,
 CONSTRAINT klant_PK PRIMARY KEY (id_klant),
 CONSTRAINT werkvorm_fk FOREIGN KEY (id_werkvorm) References dbr01_g08.werkvorm (id_werkvorm)
 );
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.factuur(
+id_factuur	Integer			NOT NULL,
+CONSTRAINT factuur_PK PRIMARY KEY (id_factuur),
+CONSTRAINT klant_fk FOREIGN KEY(id_klant) References dbr01_g08.klant(id_klant)
+);
+
+CREATE TABLE IF NOT EXISTS dbr01.g08.verslag(
+id_verslag	Integer			NOT NULL,
+CONSTRAINT verslag_PK PRIMAIRY KEY (id_verslag),
+CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) References dbr01.g08(id_begeleider),
+CONSTRAINT progamma_fk FOREIGN KEY (id_progamma) References dbr01.g08(id_progammma)
+);
