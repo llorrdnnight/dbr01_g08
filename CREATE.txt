@@ -24,9 +24,7 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.programma(
 CREATE TABLE IF NOT EXISTS dbr01_g08.werkvorm(
 	id_werkvorm		Integer					NOT NULL,	
 	grootte_groep		Integer					NOT NULL,
-	tijdsduur		Integer					NOT NULL,
-	activiteit_id		Integer					NOT NULL,
-	aanpassing_id 		Integer					NOT NULL,
+	tijdsduur		TIME					NOT NULL,
 	CONSTRAINT werkvorm_PK PRIMARY KEY (id_werkvorm)
 );
 
@@ -71,7 +69,7 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.vastebegeleider(
 
 CREATE TABLE IF NOT EXISTS dbr01_g08.aanpassing(
 	id_aanpassing		Integer					NOT NULL,
-
+	id_werkvorm		Integer					NOT NULL,
 	CONSTRAINT aanpassing_PK PRIMARY KEY (id_aanpassing),
 	CONSTRAINT vastebegeleider_PK FOREIGN KEY (id_vastebegeleider) REFERENCES dbr01_g08.vastebegeleider(id_vastebegeleider),
 	CONSTRAINT werkvorm_PK FOREIGN KEY (id_werkvorm) REFERENCES dbr01_g08.werkvorm(id_werkvorm)
@@ -91,6 +89,15 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.klant(
 	CONSTRAINT werkvorm_fk FOREIGN KEY (id_werkvorm) References dbr01_g08.werkvorm (id_werkvorm)
 );
 
+CREATE TABLE IF NOT EXISTS dbr01_g08.programma_klant(
+	id_klant			Integer				NOT NULL,
+	id_programma			Integer				NOT NULL,
+
+	CONSTRAINT klant_fk FOREIGN KEY (id_klant) References dbr01_g08.klant (id_klant),
+	CONSTRAINT programma_fk FOREIGN KEY (id_programma) References dbr01_g08.programma (id_programma),
+	CONSTRAINT p_k_PK PRIMARY KEY (id_programma, id_klant)
+);
+
 CREATE TABLE IF NOT EXISTS dbr01_g08.factuur(
 	id_factuur			Integer				NOT NULL,
 	CONSTRAINT factuur_PK PRIMARY KEY (id_factuur),
@@ -101,7 +108,7 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.verslag(
 	id_verslag			Integer				NOT NULL,
 	CONSTRAINT verslag_PK PRIMAIRY KEY (id_verslag),
 	CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) References dbr01.g08(id_begeleider),
-	CONSTRAINT progamma_fk FOREIGN KEY (id_progamma) References dbr01.g08(id_progammma)
+	CONSTRAINT programma_fk FOREIGN KEY (id_programma) References dbr01.g08(id_progammma)
 );
 
 CREATE TABLE IF NOT EXISTS dbr01_g08.ervaring(
