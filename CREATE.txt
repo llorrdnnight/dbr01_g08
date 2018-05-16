@@ -81,9 +81,11 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.aanpassing(
 
 
 Create table if not exists dbr01_g08.vrijwilligebegeleider(
+	id_vrijwilliger			Integer				NOT NULL,
 	id_begeleider			Integer 			NOT NULL, 
 	naam				varchar(35)			NOT NULL,
-	CONSTRAINT vrijwilligebegeleider_PK PRIMARY KEY (id_begeleider) REFERENCES dbr01_g08.begeleider(id_begeleider)
+	CONSTRAINT vrijwilligebegeleider_PK PRIMARY KEY (id_vrijwilliger),
+	CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) REFERENCES dbr01_g08.begeleider(id_begeleider)
 );
 
 CREATE TABLE IF NOT EXISTS dbr01_g08.klant(
@@ -112,16 +114,16 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.factuur(
 CREATE TABLE IF NOT EXISTS dbr01_g08.verslag(
 	id_verslag			Integer				NOT NULL,
 	id_begeleider			Integer				NOT NULL,
-	id_progamma			Integer				NOT NULL,
+	id_programma			Integer				NOT NULL,
 	CONSTRAINT verslag_PK PRIMARY KEY (id_verslag),
-	CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) References dbr01.g08(id_begeleider),
-	CONSTRAINT programma_fk FOREIGN KEY (id_programma) References dbr01.g08(id_progammma)
+	CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) References dbr01_g08.begeleider(id_begeleider),
+	CONSTRAINT programma_fk FOREIGN KEY (id_programma) References dbr01_g08.programma(id_programma)
 );
 
 CREATE TABLE IF NOT EXISTS dbr01_g08.ervaring(
 	id_ervaring			Integer				NOT NULL,
 	id_begeleider			Integer				NOT NULL,
 	CONSTRAINT ervaring_PK PRIMARY KEY (id_ervaring),
-	CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) References dbr01.g08(id_begeleider)
+	CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) References dbr01_g08.begeleider(id_begeleider)
 );
 
