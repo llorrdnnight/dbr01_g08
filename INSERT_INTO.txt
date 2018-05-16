@@ -203,3 +203,21 @@ insert into dbr01_g08.vrijwilligebegeleider (id_vrijwilligebegeleider, id_begele
 insert into dbr01_g08.vrijwilligebegeleider (id_vrijwilligebegeleider, id_begeleider) values ('009','6697500409');
 
 insert into dbr01_g08.vrijwilligebegeleider (id_vrijwilligebegeleider, id_begeleider) values ('010','2109335572');
+
+insert into dbr01_g08.klant (id_klant, id_werkvorm) values ('7833872245', '8173711305');
+insert into dbr01_g08.klant (id_klant, id_werkvorm) values ('7500991649', '0184006333');
+insert into dbr01_g08.klant (id_klant, id_werkvorm) values ('0098768603', '7593672794');
+insert into dbr01_g08.klant (id_klant, id_werkvorm) values ('7262857657', '0309037107');
+insert into dbr01_g08.klant (id_klant, id_werkvorm) values ('4365158198', '0309037107');
+insert into dbr01_g08.klant (id_klant, id_werkvorm) values ('5126969595', '0184006333');
+insert into dbr01_g08.klant (id_klant, id_werkvorm) values ('0332047997', '0447996428');
+
+insert into dbr01_g08.programma_klant (id_klant, id_programma) values ('7833872245','5087548725');
+insert into dbr01_g08.programma_klant (id_klant, id_programma) values ('7500991649','6285987556');
+insert into dbr01_g08.programma_klant (id_klant, id_programma) values ('0098768603','1462518044');
+insert into dbr01_g08.programma_klant (id_klant, id_programma) values ('7262857657','9673969760');
+insert into dbr01_g08.programma_klant (id_klant, id_programma) values ('4365158198','4901577689');
+insert into dbr01_g08.programma_klant (id_klant, id_programma) values ('5126969595','9130152364');
+insert into dbr01_g08.programma_klant (id_klant, id_programma) values ('0332047997','9673969760');
+
+
