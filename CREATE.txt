@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.missend_materiaal(
 	aantal			Integer					NOT NULL,
 	prijsineuro		Integer					NOT NULL,
 	CONSTRAINT missend_materiaal_PK PRIMARY KEY (id_missend_materiaal),
-	CONSTRAINT activiteit_fk FOREIGN KET (id_activiteit) REFERENCES dbr01_g08.activiteit(id_activiteit)
+	CONSTRAINT activiteit_fk FOREIGN KEY (id_activiteit) REFERENCES dbr01_g08.activiteit(id_activiteit)
 );
 
 
