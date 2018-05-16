@@ -73,9 +73,10 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.vastebegeleider(
 CREATE TABLE IF NOT EXISTS dbr01_g08.aanpassing(
 	id_aanpassing		Integer					NOT NULL,
 	id_werkvorm		Integer					NOT NULL,
+	id_vastebegeleider	Integer					NOT NULL,
 	CONSTRAINT aanpassing_PK PRIMARY KEY (id_aanpassing),
-	CONSTRAINT vastebegeleider_PK FOREIGN KEY (id_vastebegeleider) REFERENCES dbr01_g08.vastebegeleider(id_vastebegeleider),
-	CONSTRAINT werkvorm_PK FOREIGN KEY (id_werkvorm) REFERENCES dbr01_g08.werkvorm(id_werkvorm)
+	CONSTRAINT werkvorm_PK FOREIGN KEY (id_werkvorm) REFERENCES dbr01_g08.werkvorm(id_werkvorm),
+	CONSTRAINT vastebegeleider_PK FOREIGN KEY (id_vastebegeleider) REFERENCES dbr01_g08.vastebegeleider(id_vastebegeleider)
 );
 
 
