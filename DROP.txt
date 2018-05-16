@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS dbr01_g08.missend_materiaal;
 
 DROP TABLE IF EXISTS dbr01_g08.activiteit; 
 
-DROP TABLE IF EXISTS dbr01_g08.werkvorm;
+DROP TABLE IF EXISTS dbr01_g08.werkvorm CASCADE;
 
 DROP TABLE IF EXISTS dbr01_g08.programma;
 
