@@ -14,8 +14,6 @@ DROP TABLE IF EXISTS dbr01_g08.aanpassing;
 
 DROP TABLE IF EXISTS dbr01_g08.vastebegeleider;
 
-DROP TABLE IF EXISTS dbr01_g08.activiteit_missend_materiaal;
-
 DROP TABLE IF EXISTS dbr01_g08.programma_activiteit;
 
 DROP TABLE IF EXISTS dbr01_g08.missend_materiaal;
