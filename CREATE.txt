@@ -81,9 +81,11 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.aanpassing(
 
 
 Create table if not exists dbr01_g08.vrijwilligebegeleider(
+	id_vrijwilliger			Integer				NOT NULL,
 	id_begeleider			Integer 			NOT NULL, 
 	naam				varchar(35)			NOT NULL,
-	CONSTRAINT vrijwilligebegeleider_PK PRIMARY KEY (id_begeleider) REFERENCES dbr01_g08.begeleider(id_begeleider)
+	CONSTRAINT vrijwilligebegeleider_PK PRIMARY KEY (id_vrijwilliger),
+	CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) REFERENCES dbr01_g08.begeleider(id_begeleider)
 );
 
 CREATE TABLE IF NOT EXISTS dbr01_g08.klant(
