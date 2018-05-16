@@ -135,7 +135,7 @@ INSERT INTO dbr01_g08.programma_activiteit (id_programma,id_activiteit) VALUES (
 INSERT INTO dbr01_g08.programma_activiteit (id_programma,id_activiteit) VALUES ('6285987556','2566125449');
 INSERT INTO dbr01_g08.programma_activiteit (id_programma,id_activiteit) VALUES ('4723873848','7181007416');
 INSERT INTO dbr01_g08.programma_activiteit (id_programma,id_activiteit) VALUES ('6285987556','0991583736');
-INSERT INTO dbr01_g08.programma_activiteit (id_programma,id_activiteit) VALUES ('9673969760','5463288844');
+INSERT INTO dbr01_g08.programma_activiteit (id_programma,id_activiteit) VALUES ('9673969760','5724027194'); -- hierzo
 INSERT INTO dbr01_g08.programma_activiteit (id_programma,id_activiteit) VALUES ('6285987556','1097427536');
 INSERT INTO dbr01_g08.programma_activiteit (id_programma,id_activiteit) VALUES ('1462518044','3931369242');
 INSERT INTO dbr01_g08.programma_activiteit (id_programma,id_activiteit) VALUES ('1462518044','7181007416');
