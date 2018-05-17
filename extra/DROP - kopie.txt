@@ -1,0 +1,32 @@
+DROP TABLE IF EXISTS dbr01_g08.ervaring;
+
+DROP TABLE IF EXISTS dbr01_g08.verslag;
+
+DROP TABLE IF EXISTS dbr01_g08.factuur;
+
+DROP TABLE IF EXISTS dbr01_g08.programma_klant;
+
+DROP TABLE IF EXISTS drb01_g08.klant;
+
+DROP TABLE IF EXISTS dbr01_g08.vrijwilligebegeleider;
+
+DROP TABLE IF EXISTS dbr01_g08.aanpassing;
+
+DROP TABLE IF EXISTS dbr01_g08.vastebegeleider;
+
+DROP TABLE IF EXISTS dbr01_g08.programma_activiteit;
+
+DROP TABLE IF EXISTS dbr01_g08.missend_materiaal;
+
+DROP TABLE IF EXISTS dbr01_g08.activiteit; 
+
+DROP TABLE IF EXISTS dbr01_g08.werkvorm CASCADE;
+
+DROP TABLE IF EXISTS dbr01_g08.programma;
+
+DROP TABLE IF EXISTS dbr01_g08.begeleider;
+
+
+DROP TYPE IF EXISTS enum_rijbewijs;
+DROP TYPE IF EXISTS enum_ehbo;
+
