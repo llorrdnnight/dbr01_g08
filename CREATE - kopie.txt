@@ -1,0 +1,132 @@
+GRANT ALL PRIVILEGES ON SCHEMA dbr01_g08 TO r0702452;
+GRANT ALL PRIVILEGES ON SCHEMA dbr01_g08 TO r0624867;
+GRANT ALL privileges ON ALL TABLES IN SCHEMA dbr01_g08 TO r0702452;
+GRANT ALL privileges ON ALL TABLES IN SCHEMA dbr01_g08 TO r0624867;
+GRANT SELECT ON ALL TABLES IN SCHEMA dbr01_g08 TO r0702452;
+GRANT SELECT ON ALL TABLES IN SCHEMA dbr01_g08 TO r0624867;
+
+CREATE TYPE enum_rijbewijs as ENUM ('a', 'b', 'c', 'd', 'g', 'am');
+CREATE TYPE enum_ehbo as ENUM('ja', 'nee');
+CREATE TABLE IF NOT EXISTS dbr01_g08.begeleider(
+	id_begeleider		Bigint					NOT NULL,
+	telefoonnummer	float(53)					NOT NULL,
+	voornaam		varchar(35)				NOT NULL,
+	achternaam		varchar(35)				NOT NULL,
+	rijbewijs		enum_rijbewijs				NOT NULL,
+	ehbo			enum_ehbo				NOT NULL,
+	geboortedatum	DATE						NOT NULL,
+	vooropleiding	TEXT						NOT NULL,
+	CONSTRAINT begeleider_PK PRIMARY KEY (id_begeleider)
+);
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.programma(
+	id_programma		Bigint					NOT NULL,
+	id_begeleider 		Bigint					NOT NULL,
+	naam			VARCHAR(35)				NOT NULL,
+	duur			VARCHAR(35)				NOT NULL,
+	CONSTRAINT programma_PK PRIMARY KEY (id_programma),
+	CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) References dbr01_g08.begeleider (id_begeleider)
+);
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.werkvorm(
+	id_werkvorm		Bigint					NOT NULL,	
+	grootte_groep		Bigint					NOT NULL,
+	tijdsduur		TIME					NOT NULL,
+	CONSTRAINT werkvorm_PK PRIMARY KEY (id_werkvorm)
+);
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.activiteit(
+	id_activiteit		Bigint					NOT NULL,
+	id_werkvorm		Bigint					NOT NULL,
+	max_deelnemers		Integer					NOT NULL,
+	min_deelnemers		Integer					NOT NULL,
+	prijs_per_deelnemer	Integer					NOT NULL,
+	CONSTRAINT activiteit_PK PRIMARY KEY(id_activiteit)
+);
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.missend_materiaal(
+	id_missend_materiaal	Bigint					NOT NULL,
+	id_activiteit		Bigint					NOT NULL,
+	object			varchar(35)				NOT NULL,
+	aantal			Integer					NOT NULL,
+	prijsineuro		Integer					NOT NULL,
+	CONSTRAINT missend_materiaal_PK PRIMARY KEY (id_missend_materiaal),
+	CONSTRAINT activiteit_fk FOREIGN KEY (id_activiteit) REFERENCES dbr01_g08.activiteit(id_activiteit)
+);
+
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.programma_activiteit(
+	id_programma		Bigint 					NOT NULL,
+	id_activiteit 		Bigint 					NOT NULL,
+	
+	CONSTRAINT programma_fk FOREIGN KEY (id_programma) REFERENCES dbr01_g08.programma(id_programma),
+	CONSTRAINT activiteit_fk FOREIGN KEY (id_activiteit) REFERENCES dbr01_g08.activiteit(id_activiteit),
+	CONSTRAINT p_a_PK PRIMARY KEY (id_programma, id_activiteit)
+);
+
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.vastebegeleider(
+	id_vastebegeleider	Bigint 					NOT NULL,
+	id_begeleider		Bigint 					NOT NULL, 
+	CONSTRAINT begeleider_FK FOREIGN KEY (id_begeleider) REFERENCES dbr01_g08.begeleider(id_begeleider),
+	CONSTRAINT vastebegeleider_PK PRIMARY KEY (id_vastebegeleider)
+);
+
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.aanpassing(
+	id_aanpassing		Bigint					NOT NULL,
+	id_werkvorm		Bigint					NOT NULL,
+	id_vastebegeleider	Bigint					NOT NULL,
+	CONSTRAINT aanpassing_PK PRIMARY KEY (id_aanpassing),
+	CONSTRAINT werkvorm_fk FOREIGN KEY (id_werkvorm) REFERENCES dbr01_g08.werkvorm(id_werkvorm),
+	CONSTRAINT vastebegeleider_fk FOREIGN KEY (id_vastebegeleider) REFERENCES dbr01_g08.vastebegeleider(id_vastebegeleider)
+);
+
+
+Create table if not exists dbr01_g08.vrijwilligebegeleider(
+	id_vrijwilliger			Bigint				NOT NULL,
+	id_begeleider			Bigint 			NOT NULL, 
+	naam				varchar(35)			NOT NULL,
+	CONSTRAINT vrijwilligebegeleider_PK PRIMARY KEY (id_vrijwilliger),
+	CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) REFERENCES dbr01_g08.begeleider(id_begeleider)
+);
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.klant(
+	id_klant			Bigint				NOT NULL,
+	id_werkvorm			Bigint				NOT NULL,	
+	CONSTRAINT klant_PK PRIMARY KEY (id_klant),
+	CONSTRAINT werkvorm_fk FOREIGN KEY (id_werkvorm) References dbr01_g08.werkvorm (id_werkvorm)
+);
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.programma_klant(
+	id_klant			Bigint				NOT NULL,
+	id_programma			Bigint				NOT NULL,
+
+	CONSTRAINT klant_fk FOREIGN KEY (id_klant) References dbr01_g08.klant (id_klant),
+	CONSTRAINT programma_fk FOREIGN KEY (id_programma) References dbr01_g08.programma (id_programma),
+	CONSTRAINT p_k_PK PRIMARY KEY (id_programma, id_klant)
+);
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.factuur(
+	id_factuur			Bigint				NOT NULL,
+	id_klant			Bigint				NOT NULL,
+	CONSTRAINT factuur_PK PRIMARY KEY (id_factuur),
+	CONSTRAINT klant_fk FOREIGN KEY(id_klant) References dbr01_g08.klant(id_klant)
+);
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.verslag(
+	id_verslag			Bigint				NOT NULL,
+	id_begeleider			Bigint				NOT NULL,
+	id_programma			Bigint				NOT NULL,
+	CONSTRAINT verslag_PK PRIMARY KEY (id_verslag),
+	CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) References dbr01_g08.begeleider(id_begeleider),
+	CONSTRAINT programma_fk FOREIGN KEY (id_programma) References dbr01_g08.programma(id_programma)
+);
+
+CREATE TABLE IF NOT EXISTS dbr01_g08.ervaring(
+	id_ervaring			Bigint				NOT NULL,
+	id_begeleider			Bigint				NOT NULL,
+	CONSTRAINT ervaring_PK PRIMARY KEY (id_ervaring),
+	CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) References dbr01_g08.begeleider(id_begeleider)
+);
+
