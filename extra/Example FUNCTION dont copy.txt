@@ -1,0 +1,30 @@
+--1)Een klant was erg tevreden van de werkvorm die werd toegepast op zijn groep de vorige keer dat hij zich had ingeschreven voor een programma bij nature. Deze klant komt opnieuw voor een programma en wilt nu graag dezelfde werkvorm voor de deelnemers.
+
+select w.naam, k.klant_id, k.naam, d.datum
+from "dbR01_g03".klant k inner join "dbR01_g03".groep g using(klant_id) inner join "dbR01_g03".groepDeelnemers gd using(groepdeelnemers_id) inner join "dbR01_g03".werkvorm w using(werkvorm_id) inner join "dbR01_g03".deelname d using(groepdeelnemers_id)
+where k.naam = 'Jan Claes'
+order by d.datum
+
+-------------------------------------
+WERKT NIET
+--2)Een van de werknemers wil graag weten wat het totaal bedrag van de facturen, gestuurd naar klanten van de groepen die hij begeleid heeft om te vergelijken met andere werknemers wie voor het meeste geld al gewerkt heeft.
+
+select f.bedrag, b.naam, k.klant_id
+from "dbR03_g03".begeleider b full outer join "dbR03_g03".programmabegeleiding pb using(begeleider_id) full outer join "dbR03_g03".programma p using(programma_id) full outer join "dbR03_g03".deelname d using(programma_id) full outer join "dbR03_g03".groepdeelnemers gd using(groepdeelnemers_id) full outer join "dbR03_g03".groep g using(groepdeelnemers_id) full outer join "dbR03_g03".klant k using(klant_id) full outer join "dbR03_g03".factuur f using(klant_id)
+order by k.klant_id
+-------------------------------------
+
+
+--3) Een klant heeft een klacht over een bepaalde toegepaste werkvorm. De hoofdbegeleider wil nu graag aan de hand van de naam van de klant zien welke individuen er hebben meegedaan en  welke werkvorm er voor problemen gezorgd had. Hij wil graag ook extra info omtrent de leeftijd van de individuen om zo eventueel een verband te kunnen maken tussen de leeftijd en de klacht op een bepaalde  werkvorm.
+
+select i.naam, i.leeftijd, k.naam, w.naam, w.aard
+from "dbR01_g03".individu i inner join "dbR01_g03".klant k using(klant_id) inner join "dbR01_g03".groepdeelnemers gd using(groepdeelnemers_id) inner join "dbR01_g03".werkvorm w using(werkvorm_id)
+where k.naam = 'Charlotte Geens'
+order by k.naam
+
+--4) Een begeleider wil graag een lijst van alle programma's die bij de rapportage een "Goed" of "Perfect" kregen en hij wil ook weten welke begeleider hier verantwoordelijk voor was.
+
+select p.programma_id, p.datum, r.opmerking, b.naam
+from "dbR01_g03".programma p inner join "dbR01_g03".rapportage r using(programma_id) inner join "dbR01_g03".programmabegeleiding pg using(programma_id) inner join "dbR01_g03".begeleider b using(begeleider_id)
+where r.opmerking = 'Goed' or r.opmerking = 'Perfect'
+order by b.naam
