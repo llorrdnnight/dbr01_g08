@@ -1,5 +1,5 @@
 
-select k.id_klant, k.programma, prijs 
+select k.id_klant, pk.id_programma, prijs 
 From klant k inner join dbr01_g08.programma_klant pk using (id_klant)
 where k.id_programma = (	select id_programma
 				From programma p left outer join programma_activiteit pa
