@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.activiteit(
 	id_werkvorm		Bigint					NOT NULL,
 -- Added ----------------------------------------------------------------------------------------------------
 	naam			varchar(35)				NOT NULL,
+--------------------
 	max_deelnemers		Integer					NOT NULL,
 	min_deelnemers		Integer					NOT NULL,
 	prijs_per_deelnemer	Integer					NOT NULL,
@@ -98,9 +99,7 @@ Create table if not exists dbr01_g08.vrijwilligebegeleider(
 CREATE TABLE IF NOT EXISTS dbr01_g08.klant(
 	id_klant			Bigint				NOT NULL,
 	id_werkvorm			Bigint				NOT NULL,
---- Added -----------------------------------------------------------------------------
 	naam				varchar(35)			NOT NULL,	
----------------------------------------------------------------------------------------	
 	CONSTRAINT klant_PK PRIMARY KEY (id_klant),
 	CONSTRAINT werkvorm_fk FOREIGN KEY (id_werkvorm) References dbr01_g08.werkvorm (id_werkvorm)
 );
