@@ -42,7 +42,7 @@ insert into dbr01_g08.werkvorm (id_werkvorm, grootte_groep, tijdsduur) values ('
 								('4589465655', 5, '0:27');
 
 
-insert into dbr01_g08.activiteit (id_activiteit, id_werkvorm, naam, max_deelnemers, min_deelnemers, prijs_per_deelnemer) values ('5919143762', '8173711305', 10, 7, 14),
+insert into dbr01_g08.activiteit (id_activiteit, id_werkvorm, naam, max_deelnemers, min_deelnemers, prijs_per_deelnemer) values ('5919143762', '8173711305', 'Sunflower', 10, 7, 14),
 								('1564177092', '2220492397', 'Northern Primrose', 14, 8, 2),
 								('2566125449', '2220492397', 'Lechecillo', 17, 10, 9),
 								('0424638118', '8173711305', 'Brewers Cliffbrake ', 17, 7, 8),
@@ -204,3 +204,4 @@ insert into dbr01_g08.groepdeelnemers(id_groepdeelnemers, aantal_deelnemers, id_
 								( 6666, 12, 0332047997, '9130152364'),
 								( 4175, 30, 0332047997, '3937992669'),
 								( 3298, 17, 5126969595, '9130152364');
+
