@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.begeleider(
 
 CREATE TABLE IF NOT EXISTS dbr01_g08.programma(
 	
-		Bigint					NOT NULL,
+	id_programma		Bigint					NOT NULL,
 	id_begeleider 		Bigint					NOT NULL,
 	naam			VARCHAR(35)				NOT NULL,
 	duur			VARCHAR(35)				NOT NULL,
