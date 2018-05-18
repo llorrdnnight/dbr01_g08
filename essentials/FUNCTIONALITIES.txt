@@ -40,6 +40,7 @@ where b.achternaam = 'Muttock';
 --------------------------------------------------------------------------------
 
 --- Aantal activiteiten per programma
+-- works but too short
 SELECT COUNT(pa.id_activiteit), p.naam, p.id_programma
 FROM dbr01_g08.programma p inner join dbr01_g08.programma_activiteit pa using (id_programma) GROUP BY p.naam, p.id_programma;
 --------------------------------------------------------------------------------
