@@ -168,13 +168,13 @@ insert into dbr01_g08.vrijwilligebegeleider (id_vrijwilligebegeleider, id_begele
 								('009','6697500409'),
 								('010','2109335572');
 
-insert into dbr01_g08.klant (id_klant, id_werkvorm) values ('7833872245', '8173711305'),
-								('7500991649', '0184006333'),
-								('0098768603', '7593672794'),
-								('7262857657', '0309037107'),
-								('4365158198', '0309037107'),
-								('5126969595', '0184006333'),
-								('0332047997', '0447996428');
+insert into dbr01_g08.klant (id_klant, id_werkvorm) values ('7833872245', '8173711305', 'Catarina Cansdale'),
+								('7500991649', '0184006333', 'Roselle Passby'),
+								('0098768603', '7593672794', 'Tonia McLauchlin'), 
+								('7262857657', '0309037107', 'Alina Vickerman'),
+								('4365158198', '0309037107', 'Bern Swafield'),
+								('5126969595', '0184006333', 'Phedra Simenot'),
+								('0332047997', '0447996428', 'Henri Giacobillio');
 
 insert into dbr01_g08.programma_klant (id_klant, id_programma) values ('7833872245','5087548725'),
 								('7500991649','6285987556'),

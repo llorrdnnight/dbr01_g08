@@ -18,7 +18,7 @@
 
 --------------------------------------------------------------------------------
 --- Welke klanten een begeleider gehad heeft
-
+-- progamma heeft begeleider (en klant via programma_klant)
 
 --------------------------------------------------------------------------------
 --- Aantal activiteiten per progamma
