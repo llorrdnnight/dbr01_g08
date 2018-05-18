@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.begeleider(
 );
 
 CREATE TABLE IF NOT EXISTS dbr01_g08.programma(
-	id_programma		Bigint					NOT NULL,
+	
+		Bigint					NOT NULL,
 	id_begeleider 		Bigint					NOT NULL,
 	naam			VARCHAR(35)				NOT NULL,
 	duur			VARCHAR(35)				NOT NULL,
@@ -121,7 +122,7 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.groepdeelnemers(
 	id_programma			Bigint				NOT NULL,
 	
 	CONSTRAINT klant_fk FOREIGN KEY (id_klant) References dbr01_g08.klant (id_klant),
-	CONSTRAINT programma_fk FOREIGN KEY (id_programma) References dbr01_g08.activiteit (id_programma),
+	CONSTRAINT programma_fk FOREIGN KEY (id_programma) References dbr01_g08.programma (id_programma),
 	CONSTRAINT groepdeelnemers_PK PRIMARY KEY (id_groepdeelnemers)		
 );
 --------------------------------------------------------------------------
