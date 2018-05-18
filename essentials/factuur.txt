@@ -1,4 +1,4 @@
-Insert Into factuur(factuur id, programma, prijs)
+Insert Into factuur(id_factuur, programma, prijs)
 select k.klant_id, k.programma, prijs 
 From klant k
 where k.programma_id = (	select programma_id
