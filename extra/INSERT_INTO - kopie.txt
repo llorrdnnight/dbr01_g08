@@ -1,33 +1,19 @@
 insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('5981701927', '9992089263', 'Rubia', 'Moorerud', 'am', 'ja', '1991-03-22', 'Nulla suscipit ligula in lacus.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('7981656478', '1454570765', 'Trish', 'Muttock', 'g', 'nee', '1984-10-21', 'Sed vel enim sit amet nunc viverra dapibus.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('9920627038', '4069664885', 'Algernon', 'Coneybeare', 'g', 'nee', '1963-12-27', 'Fusce posuere felis sed lacus.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('4668775444', '1546404025', 'Alayne', 'Ca', 'am', 'ja', '1979-03-12', 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('9367217617', '8448267202', 'Brianne', 'Keyworth', 'am', 'nee', '1995-11-29', 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('7892564314', '9432692003', 'Hercule', 'Mariault', 'g', 'ja', '1975-10-24', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('3256729835', '1385628799', 'Tobe', 'Barrie', 'am', 'nee', '1970-01-25', 'Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('7061397152', '1552187841', 'Jackelyn', 'Creus', 'g', 'nee', '1969-09-07', 'Curabitur gravida nisi at nibh.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('2197002082', '7956016082', 'Esme', 'Grazier', 'am', 'ja', '1969-12-22', 'Donec semper sapien a libero. Nam dui.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('3774077495', '3636948679', 'Vinny', 'Manders', 'am', 'nee', '1961-08-16', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('9755176039', '4696646259', 'Yorgos', 'Larkworthy', 'g', 'ja', '1962-02-03', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('8526656287', '3903646368', 'Margery', 'Cass', 'g', 'ja', '1971-09-15', 'Duis ac nibh.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('3903702242', '3758177089', 'Lavena', 'Chatters', 'g', 'nee', '1976-06-26', 'In eleifend quam a odio.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('6697500409', '8908531063', 'Ollie', 'Corsan', 'g', 'ja', '1972-05-11', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.');
-insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achternaam, rijbewijs, ehbo, geboortedatum, vooropleiding)
- values ('2109335572', '7686577769', 'Dick', 'Tadman', 'am', 'ja', '1975-05-14', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.');
+ values ('5981701927', '9992089263', 'Rubia', 'Moorerud', 'am', 'ja', '1991-03-22', 'Nulla suscipit ligula in lacus.'),
+	('7981656478', '1454570765', 'Trish', 'Muttock', 'g', 'nee', '1984-10-21', 'Sed vel enim sit amet nunc viverra dapibus.'),
+	('9920627038', '4069664885', 'Algernon', 'Coneybeare', 'g', 'nee', '1963-12-27', 'Fusce posuere felis sed lacus.'),
+	('4668775444', '1546404025', 'Alayne', 'Ca', 'am', 'ja', '1979-03-12', 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.'),
+	('9367217617', '8448267202', 'Brianne', 'Keyworth', 'am', 'nee', '1995-11-29', 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.'),
+	('7892564314', '9432692003', 'Hercule', 'Mariault', 'g', 'ja', '1975-10-24', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.'),
+	('3256729835', '1385628799', 'Tobe', 'Barrie', 'am', 'nee', '1970-01-25', 'Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.'),
+	('7061397152', '1552187841', 'Jackelyn', 'Creus', 'g', 'nee', '1969-09-07', 'Curabitur gravida nisi at nibh.'),
+	('2197002082', '7956016082', 'Esme', 'Grazier', 'am', 'ja', '1969-12-22', 'Donec semper sapien a libero. Nam dui.'),
+	('3774077495', '3636948679', 'Vinny', 'Manders', 'am', 'nee', '1961-08-16', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.'),
+	('9755176039', '4696646259', 'Yorgos', 'Larkworthy', 'g', 'ja', '1962-02-03', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.'),
+	('8526656287', '3903646368', 'Margery', 'Cass', 'g', 'ja', '1971-09-15', 'Duis ac nibh.'),
+	('3903702242', '3758177089', 'Lavena', 'Chatters', 'g', 'nee', '1976-06-26', 'In eleifend quam a odio.'),
+	('6697500409', '8908531063', 'Ollie', 'Corsan', 'g', 'ja', '1972-05-11', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.'),
+	('2109335572', '7686577769', 'Dick', 'Tadman', 'am', 'ja', '1975-05-14', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.');
 
 
 insert into dbr01_g08.programma (id_programma, id_begeleider, naam, duur) values ('5087548725', '7892564314 ', 'Tres-Zap', '4:24');
