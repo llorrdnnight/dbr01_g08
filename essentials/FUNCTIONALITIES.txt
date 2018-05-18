@@ -13,8 +13,8 @@
 
 
 --------------------------------------------------------------------------------
----- welke begeleider voor welke wervom aanpassingen gemaakt
-
+---- welke begeleider voor welke werkvom aanpassingen gemaakt
+select b.voornaam, b.achternaam, w.id_werkvorm from dbr01_g08.werkvorm w inner join dbr01_g08.aanpassing a using(id_werkvorm) inner join dbr01_g08.vastebegeleider vb using(id_begeleider) inner join dbr01_g08.begeleider b using(id_begeleider);
 
 --------------------------------------------------------------------------------
 --- Welke klanten een begeleider gehad heeft
