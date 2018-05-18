@@ -38,6 +38,12 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.werkvorm(
 CREATE TABLE IF NOT EXISTS dbr01_g08.activiteit(
 	id_activiteit		Bigint					NOT NULL,
 	id_werkvorm		Bigint					NOT NULL,
+-- Added ----------------------------------------------------------------------------------------------------
+	naam			varchar(35)				NOT NULL,
+	max_deelnemers		Integer					NOT NULL,
+	min_deelnemers		Integer					NOT NULL,
+	prijs_per_deelnemer	Integer					NOT NULL,
+-------------------------------------------------------------------------------------------------------------
 	CONSTRAINT activiteit_PK PRIMARY KEY(id_activiteit)
 );
 
@@ -81,16 +87,19 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.aanpassing(
 
 
 Create table if not exists dbr01_g08.vrijwilligebegeleider(
-	id_vrijwilligebegeleider			Bigint				NOT NULL,
+	id_vrijwilliger			Bigint				NOT NULL,
 	id_begeleider			Bigint 			NOT NULL, 
 	naam				varchar(35)			NOT NULL,
-	CONSTRAINT vrijwilligebegeleider_PK PRIMARY KEY (id_vrijwilligebegeleider),
+	CONSTRAINT vrijwilligebegeleider_PK PRIMARY KEY (id_vrijwilliger),
 	CONSTRAINT begeleider_fk FOREIGN KEY (id_begeleider) REFERENCES dbr01_g08.begeleider(id_begeleider)
 );
 
 CREATE TABLE IF NOT EXISTS dbr01_g08.klant(
 	id_klant			Bigint				NOT NULL,
-	id_werkvorm			Bigint				NOT NULL,	
+	id_werkvorm			Bigint				NOT NULL,
+--- Added -----------------------------------------------------------------------------
+	naam				varchar(35)			NOT NULL,	
+---------------------------------------------------------------------------------------	
 	CONSTRAINT klant_PK PRIMARY KEY (id_klant),
 	CONSTRAINT werkvorm_fk FOREIGN KEY (id_werkvorm) References dbr01_g08.werkvorm (id_werkvorm)
 );
@@ -103,6 +112,30 @@ CREATE TABLE IF NOT EXISTS dbr01_g08.programma_klant(
 	CONSTRAINT programma_fk FOREIGN KEY (id_programma) References dbr01_g08.programma (id_programma),
 	CONSTRAINT p_k_PK PRIMARY KEY (id_programma, id_klant)
 );
+
+--- Added ----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS dbr01_g08.groepdeelnemers(
+	id_groepdeelnemers		Bigint				NOT NULL,
+	aantal_deelnemers		Integer				NOT NULL,
+	id_klant			Bigint				NOT NULL,
+	id_programma			Bigint				NOT NULL,
+	
+	CONSTRAINT klant_fk FOREIGN KEY (id_klant) References dbr01_g08.klant (id_klant),
+	CONSTRAINT programma_fk FOREIGN KEY (id_programma) References dbr01_g08.activiteit (id_programma),
+	CONSTRAINT groepdeelnemers_PK PRIMARY KEY (id_groepdeelnemers)		
+);
+--------------------------------------------------------------------------
+--- Added ----------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS dbr01_g08.programma_has_deelnemers(
+	id_programma			Bigint				NOT NULL,
+	id_groepdeelnemers		Bigint				NOT NULL,
+	id_p_h_d			Bigint				NOT NULL,
+
+	CONSTRAINT programma_fk FOREIGN KEY (id_programma) References dbr01_g08.programma (id_programma),
+	CONSTRAINT groepdeelnemers_fk FOREIGN KEY (id_groepdeelnemers) References dbr01_g08.groepdeelnemers (id_groepdeelnemers),
+	CONSTRAINT p_h_d_PK PRIMARY KEY (id_p_h_d) 
+);
+--------------------------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS dbr01_g08.factuur(
 	id_factuur			Bigint				NOT NULL,
