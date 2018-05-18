@@ -5,12 +5,13 @@
 --------------------------------------------------------------------------------
 
 
----- Gemiddeld aantal aanpassingen voor een programma bij een klant..
-
+---- Gemiddeld aantal aanpassingen voor een programma (bij een klant..)
+--
+SELECT AVG()
 
 --------------------------------------------------------------------------------
 ---- Gemiddled aantal deelnemers per klant..
-
+-- Doesn't work yet
 SELECT COUNT(gp.aantal_deelnemers, k.naam) 
 FROM dbr01_g08.groepdeelnemers gp inner join dbr01_g08.programma_has_deelnemers phs using(id_groepdeelnemers)
 inner join dbr01_g08.programma p using(id_programma)
@@ -19,7 +20,7 @@ inner join dbr01_g08.klant k using (id_klant) ON pk;
 
 --------------------------------------------------------------------------------
 ---- welke begeleider voor welke werkvom aanpassingen gemaakt
-
+--Works
 select b.voornaam, b.achternaam, w.id_werkvorm 
 from dbr01_g08.werkvorm w inner join dbr01_g08.aanpassing a using(id_werkvorm)
 inner join dbr01_g08.vastebegeleider vb using(id_vastebegeleider) 
@@ -29,7 +30,7 @@ inner join dbr01_g08.begeleider b using(id_begeleider) GROUP BY b.achternaam, b.
 --------------------------------------------------------------------------------
 --- Welke klanten een begeleider gehad heeft
 -- progamma heeft begeleider (en klant via programma_klant)
-
+--Works
 select b.voornaam, b.achternaam, k.naam 
 from dbr01_g08.klant k inner join dbr01_g08.programma_klant pk using (id_klant)
 inner join dbr01_g08.programma p using(id_programma) 
@@ -37,7 +38,8 @@ inner join dbr01_g08.begeleider b using(id_begeleider)
 where b.achternaam = 'Muttock';
 
 --------------------------------------------------------------------------------
---- Aantal activiteiten per progamma
 
-
+--- Aantal activiteiten per programma
+SELECT COUNT(pa.id_activiteit), p.naam, p.id_programma
+FROM dbr01_g08.programma p inner join dbr01_g08.programma_activiteit pa using (id_programma) GROUP BY p.naam, p.id_programma;
 --------------------------------------------------------------------------------
