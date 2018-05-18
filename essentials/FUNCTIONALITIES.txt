@@ -1,0 +1,10 @@
+----- Factuur berekening
+-- deelnemers * prijs per deelnemer voor elke activiteit
+-- activitieten optellen
+
+
+
+---- Gemiddeld aantal aanpassingen voor een programma bij een klant..
+
+
+---- Gemiddled aantal deelnemers per klant..
