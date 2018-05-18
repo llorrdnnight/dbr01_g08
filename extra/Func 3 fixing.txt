@@ -1,0 +1,26 @@
+---- Gemiddled aantal deelnemers per klant..
+-- Doesn't work yet
+SELECT SUM(gp.aantal_deelnemers), k.naam 
+FROM dbr01_g08.groepdeelnemers gp inner join dbr01_g08.programma_has_deelnemers phs using(id_groepdeelnemers)
+inner join dbr01_g08.programma p ON phs.id_programma = p.id_programma
+inner join dbr01_g08.programma_klant pk ON p.id_programma = pk.id_programma
+inner join dbr01_g08.klant k ON pk.id_klant = k.id_klant
+GROUP BY k.naam;
+
+-----------
+Kzou zo doen;
+SELECT (
+SELECT AVG(gp.aantalblabla)
+FROM "dieTabel"
+WHERE dieTabel.groep_id = gr.groep_id) as gem, k.naam
+
+En hier dan een from me die groep as gr.
+-----------------------
+SELECT (SELECT AVG(gp.aantal_deelnemers) 
+FROM dbr01_g08.groepdeelnemers gp 
+WHERE dbr01_g08.groepdeelnemers.id_groepdeelnemers) as gem, k.naam
+FROM dbr01_g08.groepdeelnemers gp inner join dbr01_g08.programma_has_deelnemers phs using(id_groepdeelnemers)
+inner join dbr01_g08.programma p ON phs.id_programma = p.id_programma
+inner join dbr01_g08.programma_klant pk ON p.id_programma = pk.id_programma
+inner join dbr01_g08.klant k ON pk.id_klant = k.id_klant
+GROUP BY k.naam;
