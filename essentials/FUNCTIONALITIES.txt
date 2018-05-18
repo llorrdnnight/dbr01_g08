@@ -11,13 +11,15 @@ SELECT AVG()
 
 --------------------------------------------------------------------------------
 ---- Gemiddled aantal deelnemers per klant..
--- Doesn't work yet
-SELECT COUNT(gp.aantal_deelnemers, k.naam) 
-FROM dbr01_g08.groepdeelnemers gp inner join dbr01_g08.programma_has_deelnemers phs using(id_groepdeelnemers)
-inner join dbr01_g08.programma p using(id_programma)
-inner join dbr01_g08.programma_klant pk using (id_programma) ON p
-inner join dbr01_g08.klant k using (id_klant) ON pk;
 
+SELECT(
+SELECT floor(AVG(gd.aantal_deelnemers)) as gem
+FROM dbr01_g08.groepdeelnemers as gd INNER JOIN
+	dbr01_g08.klant as kl ON
+	(kl.id_klant = gd.id_klant)
+WHERE kl.id_klant = kla.id_klant) as Average, kla.naam
+FROM dbr01_g08.klant as kla;
+--
 --------------------------------------------------------------------------------
 ---- welke begeleider voor welke werkvom aanpassingen gemaakt
 --Works
