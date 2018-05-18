@@ -197,10 +197,10 @@ insert into dbr01_g08.verslag (id_verslag, id_begeleider, id_programma) values (
 								('7842', '7981656478' , '3424027219');
 
 -- switched activiteit to programma
-insert into dbr01_g08.groepdeelnemers(id_groepdeelnemers, aantal_deelnemers, id_klant, id_programma) values ( , , 7500991649, '5087548725'),
-								( , , 0098768603, '3937992669'),
-								( , , 7262857657, '4723873848'),
-								( , , 4365158198, '6285987556'),
-								( , , 0332047997, '9130152364'),
-								( , , 0332047997, '3937992669'),
-								( , , 5126969595, '9130152364');
+insert into dbr01_g08.groepdeelnemers(id_groepdeelnemers, aantal_deelnemers, id_klant, id_programma) values ( 8975, 20, 7500991649, '5087548725'),
+								( 4152, 36, 0098768603, '3937992669'),
+								( 4125, 41, 7262857657, '4723873848'),
+								( 1874, 15, 4365158198, '6285987556'),
+								( 6666, 12, 0332047997, '9130152364'),
+								( 4175, 30, 0332047997, '3937992669'),
+								( 3298, 17, 5126969595, '9130152364');
