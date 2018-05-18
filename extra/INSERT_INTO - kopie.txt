@@ -196,4 +196,4 @@ insert into dbr01_g08.verslag (id_verslag, id_begeleider, id_programma) values (
 								('6452', '6697500409' , '5087548725'),
 								('7842', '7981656478' , '3424027219');
 
-insert into dbr01_g08.groepdeelnemers() values ();
+insert into dbr01_g08.groepdeelnemers(id_groepdeelnemers, aantal_deelnemers, id_klant, id_activiteit) values ( , , , );
