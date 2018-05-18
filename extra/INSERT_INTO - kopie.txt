@@ -16,16 +16,16 @@ insert into dbr01_g08.begeleider (id_begeleider, telefoonnummer, voornaam, achte
 	('2109335572', '7686577769', 'Dick', 'Tadman', 'am', 'ja', '1975-05-14', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.');
 
 
-insert into dbr01_g08.programma (id_programma, id_begeleider, naam, duur) values ('5087548725', '7892564314 ', 'Tres-Zap', '4:24');
-insert into dbr01_g08.programma (id_programma, id_begeleider, naam, duur) values ('4723873848', '7892564314 ', 'Rank', '5:03');
-insert into dbr01_g08.programma (id_programma, id_begeleider, naam, duur) values ('1462518044', '9920627038 ', 'Transcof', '4:42');
-insert into dbr01_g08.programma (id_programma, id_begeleider, naam, duur) values ('6285987556', '9920627038 ', 'Aerified', '4:52');
-insert into dbr01_g08.programma (id_programma, id_begeleider, naam, duur) values ('6675220764', '7892564314 ', 'Alphazap', '4:23');
-insert into dbr01_g08.programma (id_programma, id_begeleider, naam, duur) values ('9673969760', '7981656478 ', 'Mat Lam Tam', '5:06');
-insert into dbr01_g08.programma (id_programma, id_begeleider, naam, duur) values ('3937992669', '7061397152 ', 'Domainer', '5:23');
-insert into dbr01_g08.programma (id_programma, id_begeleider, naam, duur) values ('9130152364', '7892564314 ', 'Veribet', '4:32');
-insert into dbr01_g08.programma (id_programma, id_begeleider, naam, duur) values ('4901577689', '7981656478 ', 'Voltsillam', '5:26');
-insert into dbr01_g08.programma (id_programma, id_begeleider, naam, duur) values ('3424027219', '7981656478 ', 'Sonsing', '4:22');
+insert into dbr01_g08.programma (id_programma, id_begeleider, naam, duur) values ('5087548725', '7892564314 ', 'Tres-Zap', '4:24'),
+									('4723873848', '7892564314 ', 'Rank', '5:03'),
+									('1462518044', '9920627038 ', 'Transcof', '4:42'),
+									('6285987556', '9920627038 ', 'Aerified', '4:52'),
+									('6675220764', '7892564314 ', 'Alphazap', '4:23'),
+									('9673969760', '7981656478 ', 'Mat Lam Tam', '5:06'),
+									('3937992669', '7061397152 ', 'Domainer', '5:23'),
+									('9130152364', '7892564314 ', 'Veribet', '4:32'),
+									('4901577689', '7981656478 ', 'Voltsillam', '5:26'),
+									('3424027219', '7981656478 ', 'Sonsing', '4:22');
 
 
 insert into dbr01_g08.werkvorm (id_werkvorm, grootte_groep, tijdsduur) values ('3474495321', 2, '0:26'),
