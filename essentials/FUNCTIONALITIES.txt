@@ -20,6 +20,8 @@
 --- Welke klanten een begeleider gehad heeft
 -- progamma heeft begeleider (en klant via programma_klant)
 
+select b.naam, k.naam, from "dbr01_g08".klant k inner join "dbr01_g08".programma p using (klant_id) inner join "dbr01_g08".begeleider b using id_begeleider where b.naam = "Alina Vickerman";
+
 --------------------------------------------------------------------------------
 --- Aantal activiteiten per progamma
 
