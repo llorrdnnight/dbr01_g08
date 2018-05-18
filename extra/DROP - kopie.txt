@@ -2,6 +2,8 @@ DROP TABLE IF EXISTS dbr01_g08.ervaring;
 
 DROP TABLE IF EXISTS dbr01_g08.verslag;
 
+DROP TABLE IF EXISTS dbr01_g08.groepdeelnemers;
+
 DROP TABLE IF EXISTS dbr01_g08.factuur;
 
 DROP TABLE IF EXISTS dbr01_g08.programma_klant;
