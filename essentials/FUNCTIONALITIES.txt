@@ -2,9 +2,26 @@
 -- deelnemers * prijs per deelnemer voor elke activiteit
 -- activitieten optellen
 
+--------------------------------------------------------------------------------
 
 
 ---- Gemiddeld aantal aanpassingen voor een programma bij een klant..
 
 
+--------------------------------------------------------------------------------
 ---- Gemiddled aantal deelnemers per klant..
+
+
+--------------------------------------------------------------------------------
+---- welke begeleider voor welke wervom aanpassingen gemaakt
+
+
+--------------------------------------------------------------------------------
+--- Welke klanten een begeleider gehad heeft
+
+
+--------------------------------------------------------------------------------
+--- Aantal activiteiten per progamma
+
+
+--------------------------------------------------------------------------------
