@@ -14,13 +14,22 @@
 
 --------------------------------------------------------------------------------
 ---- welke begeleider voor welke werkvom aanpassingen gemaakt
-select b.voornaam, b.achternaam, w.id_werkvorm from dbr01_g08.werkvorm w inner join dbr01_g08.aanpassing a using(id_werkvorm) inner join dbr01_g08.vastebegeleider vb using(id_begeleider) inner join dbr01_g08.begeleider b using(id_begeleider);
+
+select b.voornaam, b.achternaam, w.id_werkvorm 
+from dbr01_g08.werkvorm w inner join dbr01_g08.aanpassing a using(id_werkvorm)
+inner join dbr01_g08.vastebegeleider vb using(id_vastebegeleider) 
+inner join dbr01_g08.begeleider b using(id_begeleider);
+
 
 --------------------------------------------------------------------------------
 --- Welke klanten een begeleider gehad heeft
 -- progamma heeft begeleider (en klant via programma_klant)
 
-select b.voornaam, b.achternaam, k.naam from dbr01_g08.klant k inner join dbr01_g08.programma_klant pk using (id_klant)inner join dbr01_g08.programma p using(id_programma) inner join dbr01_g08.begeleider b using(id_begeleider) where b.achternaam = 'Muttock';
+select b.voornaam, b.achternaam, k.naam 
+from dbr01_g08.klant k inner join dbr01_g08.programma_klant pk using (id_klant)
+inner join dbr01_g08.programma p using(id_programma) 
+inner join dbr01_g08.begeleider b using(id_begeleider) 
+where b.achternaam = 'Muttock';
 
 --------------------------------------------------------------------------------
 --- Aantal activiteiten per progamma
