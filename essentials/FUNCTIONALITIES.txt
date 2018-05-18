@@ -1,17 +1,6 @@
------ Factuur berekening
--- deelnemers * prijs per deelnemer voor elke activiteit
--- activitieten optellen
 
---------------------------------------------------------------------------------
-
-
----- Gemiddeld aantal aanpassingen voor een programma (bij een klant..)
--- doesn't work
-SELECT AVG()
-
---------------------------------------------------------------------------------
 ---- Gemiddled aantal deelnemers per klant..
-
+--works
 SELECT(
 SELECT floor(AVG(gd.aantal_deelnemers)) as gem
 FROM dbr01_g08.groepdeelnemers as gd INNER JOIN
@@ -45,4 +34,26 @@ where b.achternaam = 'Muttock';
 -- works but too short
 SELECT COUNT(pa.id_activiteit), p.naam, p.id_programma
 FROM dbr01_g08.programma p inner join dbr01_g08.programma_activiteit pa using (id_programma) GROUP BY p.naam, p.id_programma;
+--------------------------------------------------------------------------------
+
+
+
+
+
+-------------------------------------------------
+--------------------------------------------------
+extra
+
+
+----- Factuur berekening
+-- deelnemers * prijs per deelnemer voor elke activiteit
+-- activitieten optellen
+
+--------------------------------------------------------------------------------
+
+
+---- Gemiddeld aantal aanpassingen voor een programma (bij een klant..)
+-- doesn't work
+SELECT AVG()
+
 --------------------------------------------------------------------------------
