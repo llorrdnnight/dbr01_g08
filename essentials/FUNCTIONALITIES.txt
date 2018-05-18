@@ -6,7 +6,7 @@
 
 
 ---- Gemiddeld aantal aanpassingen voor een programma (bij een klant..)
---
+-- doesn't work
 SELECT AVG()
 
 --------------------------------------------------------------------------------
