@@ -12,10 +12,10 @@ FROM dbr01_g08.klant as kla;
 --------------------------------------------------------------------------------
 ---- welke begeleider voor welke werkvom aanpassingen gemaakt
 --Works
-select b.voornaam, b.achternaam, w.id_werkvorm 
-from dbr01_g08.werkvorm w inner join dbr01_g08.aanpassing a using(id_werkvorm)
+SELECT b.voornaam, b.achternaam, w.id_werkvorm 
+FROM dbr01_g08.werkvorm w inner join dbr01_g08.aanpassing a using(id_werkvorm)
 inner join dbr01_g08.vastebegeleider vb using(id_vastebegeleider) 
-inner join dbr01_g08.begeleider b using(id_begeleider) GROUP BY b.achternaam, b.voornaam;
+inner join dbr01_g08.begeleider b using(id_begeleider) GROUP BY b.achternaam, b.voornaam, w.id_werkvorm;
 
 
 --------------------------------------------------------------------------------
@@ -37,10 +37,10 @@ FROM dbr01_g08.programma p inner join dbr01_g08.programma_activiteit pa using (i
 --------------------------------------------------------------------------------
 --- Factuur
 -- works
-select id_klant, SUM (aantal * prijsineuro) as schade
-from 	missend_materiaal mm,
+SELECT id_klant, SUM (aantal * prijsineuro) as schade
+FROM 	missend_materiaal mm,
 		programma_klant pk left outer join programma_activiteit pa on pk.id_programma = pa.id_programma
-where mm.id_activiteit = pa.id_activiteit
-group by pk.id_klant;  
+WHERE mm.id_activiteit = pa.id_activiteit
+GROUP BY pk.id_klant;  
 
 
