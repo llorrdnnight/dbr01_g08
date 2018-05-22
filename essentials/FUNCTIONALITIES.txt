@@ -35,7 +35,13 @@ where b.achternaam = 'Muttock';
 SELECT COUNT(pa.id_activiteit), p.naam, p.id_programma
 FROM dbr01_g08.programma p inner join dbr01_g08.programma_activiteit pa using (id_programma) GROUP BY p.naam, p.id_programma;
 --------------------------------------------------------------------------------
-
+--- Factuur
+-- works
+select id_klant, SUM (aantal * prijsineuro) as schade
+from 	missend_materiaal mm,
+		programma_klant pk left outer join programma_activiteit pa on pk.id_programma = pa.id_programma
+where mm.id_activiteit = pa.id_activiteit
+group by pk.id_klant;  
 
 
 
