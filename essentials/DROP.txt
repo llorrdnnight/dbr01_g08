@@ -33,4 +33,6 @@ DROP TABLE IF EXISTS dbr01_g08.begeleider;
 DROP TYPE IF EXISTS enum_rijbewijs;
 DROP TYPE IF EXISTS enum_ehbo;
 
+DROP SCHEMA dbr01_g08 IF EXISTS;
+
 
