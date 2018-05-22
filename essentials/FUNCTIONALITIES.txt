@@ -44,22 +44,3 @@ where mm.id_activiteit = pa.id_activiteit
 group by pk.id_klant;  
 
 
-
-
--------------------------------------------------
---------------------------------------------------
-extra
-
-
------ Factuur berekening
--- deelnemers * prijs per deelnemer voor elke activiteit
--- activitieten optellen
-
---------------------------------------------------------------------------------
-
-
----- Gemiddeld aantal aanpassingen voor een programma (bij een klant..)
--- doesn't work
-SELECT AVG()
-
---------------------------------------------------------------------------------
